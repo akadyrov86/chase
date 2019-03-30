@@ -1,9 +1,9 @@
 ---
-- host: all
+- hosts: all
   become: yes
   become_method: sudo
   tasks:
     - name: Zip /tmp weekly
-      arhive:
+      archive:
         path: /tmp/*
         dest: /tmp/weekly$(date +%y.%m.%d).tgz
