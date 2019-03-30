@@ -1,17 +1,15 @@
 ---
-- hosts: all
+- hosts: all 
   become: yes
-  become_method: sudo
+  become_method: sudo 
   tasks: 
-    - name: Add usder
+    - name: Add users
       user:
-      name: "{{ item }}"
-      state: present
-      generate_ssh_keys: yes
-    with_items:
-      - bob
-      - ben
-      - jim
-      - ken
-
-
+        name: "{{ item }}"
+        state: present
+        generate_ssh_key: yes
+      with_items:
+        - bob 
+        - ben 
+        - jim
+        - ken
